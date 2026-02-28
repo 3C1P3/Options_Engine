@@ -20,7 +20,7 @@ Supports PAPER_MODE in config.py:
 import datetime as dt
 import json
 from pathlib import Path
-from quant_signal import quant_score
+from strategies.quant_signal import quant_score
 
 from schwab.orders import options as option_orders
 

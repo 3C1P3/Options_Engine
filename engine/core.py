@@ -12,7 +12,10 @@ Later:
 """
 
 import time
+import asyncio
 from datetime import datetime, time as dtime
+
+from strategies import live_scalper_clean as scalper
 
 # For now we import the scalper directly.
 # live_scalper_clean.py currently has its own asyncio main() and event loop.
@@ -62,7 +65,8 @@ def run_engine():
         # For now, we simply run the scalper's own main.
         # This will block here until the scalper exits (Ctrl+C).
         try:
-            scalper.main()  # assuming live_scalper_clean exposes main()
+            # live_scalper_clean exposes async def main(), so run it with asyncio.
+            asyncio.run(scalper.main())
         except KeyboardInterrupt:
             print("[ENGINE] Received KeyboardInterrupt. Stopping engine.")
             break
@@ -70,6 +74,5 @@ def run_engine():
             print(f"[ENGINE] Scalper error: {e}. Restarting in 10 seconds...")
             time.sleep(10)
         else:
-            # If scalper.main() returns cleanly, break out unless you want to restart.
             print("[ENGINE] Scalper exited normally. Stopping engine.")
             break
