@@ -24,8 +24,8 @@ from strategies.quant_signal import quant_score
 
 from schwab.orders import options as option_orders
 
-from auth import create_spread_bot_client
-from config import (
+from strategies.auth import create_spread_bot_client
+from strategies.config import (
     ACCOUNT_ID,
     DEFAULT_TICKER,
     ACCOUNT_SIZE,
