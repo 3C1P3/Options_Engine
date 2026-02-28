@@ -1,0 +1,25 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual envs
+venv/
+.env/
+.venv/
+
+# Environment & secrets
+.env
+.env.save
+tokens.json
+*.pem
+*.key
+
+# Logs and data
+*.log
+*.csv
+
+# OS / editor files
+.DS_Store
+.vscode/
+.idea/
