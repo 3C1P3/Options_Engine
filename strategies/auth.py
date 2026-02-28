@@ -11,7 +11,7 @@ And that config.py contains:
 """
 
 from schwab.auth import easy_client
-from config import APP_KEY, APP_SECRET, REDIRECT_URI, TOKEN_PATH
+from strategies.config import APP_KEY, APP_SECRET, REDIRECT_URI, TOKEN_PATH
 
 
 def create_spread_bot_client():
